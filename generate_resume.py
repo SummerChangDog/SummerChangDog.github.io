@@ -7,7 +7,7 @@ from reportlab.platypus import (
 )
 from reportlab.lib.enums import TA_CENTER, TA_RIGHT
 
-OUTPUT = r"d:\校务\重要人大模版\cv\Siyuan Chang_Resume.pdf"
+OUTPUT = r"Siyuan Chang_Resume.pdf"
 
 # ── Page setup ───────────────────────────────────────────────────────────────
 doc = SimpleDocTemplate(
@@ -100,8 +100,8 @@ story.append(Paragraph(contact1, contact_style))
 
 contact2 = (
     'Renmin University of China | Homepage: '
-    '<a href="https://csy24.github.io/" color="#1155CC">'
-    '<u>https://csy24.github.io/</u></a>'
+    '<a href="https:///SummerChangDog.github.io/" color="#1155CC">'
+    '<u>https:///SummerChangDog.github.io/</u></a>'
 )
 story.append(Paragraph(contact2, contact_style))
 story.append(sp(5))
@@ -109,19 +109,25 @@ story.append(sp(5))
 # ── Education ────────────────────────────────────────────────────────────────
 story += sec("Education")
 story.append(two_col(
-    "<b>Renmin University of China, Department of Statistics</b>",
+    "<b>Renmin University of China, School of Statistics</b>",
     "Sep 2024 – Present",
 ))
 story.append(Paragraph("Data Science and Big Data Technology", body_style))
-story.append(b("GPA: 3.9, Top 5% in major"))
+story.append(b("GPA: 3.9/4.0, Top 5% in major"))
 story.append(b("<b>Programming:</b> Proficient in C++ and Python; full score in Data Structures"))
 story.append(b(
     "<b>Mathematics:</b> Full scores in Mathematical Analysis I, II &amp; III, "
     "Advanced Algebra, and Probability Theory"
 ))
 story.append(b(
-    "<b>Language:</b> CET-4: 688, CET-6: 656; full scores in all college English courses; "
+    "<b>Language:</b> CET-4: 688, CET-6: 656; full scores in all college English courses."
     "second foreign language: French"
+))
+story.append(b(
+    "<b>Prize:</b> National Third Prize, National Mathematics Competition for College Students, 2025"
+))
+story.append(b(
+    "<b>Honors:</b> First-class Academic Excellence Scholarship, RUC, 2025"
 ))
 story.append(sp(3))
 
@@ -145,52 +151,59 @@ story.append(Paragraph(
 ))
 story.append(sp(3))
 
-# ── Honors & Awards ──────────────────────────────────────────────────────────
-story += sec("Honors & Awards")
-
-awards = [
-    ("Oct 2025", "First-class Academic Excellence Scholarship, Renmin University of China"),
-    ("Nov 2025", "Third Prize (National Level), National Mathematics Competition for College Students"),
-    ("Sep 2025",
-     "Led team as captain in the 1st RUC AI Agent Innovation Application Competition; "
-     "work \"Alpha Adventure Alliance — Three-Body Pass Challenge\" received Excellence Award"),
-    ("Sep 2025",
-     "Third-class Scholarship for Social Work and Volunteer Service Backbone, "
-     "School of Statistics, RUC, 2025"),
-]
-for date, desc in awards:
-    story.append(Paragraph(f"• <b>{date}</b>  {desc}", body_style))
-
-story.append(sp(3))
-
-# ── Personal Skills & Activities ─────────────────────────────────────────────
-story += sec("Personal Skills & Activities")
-
+# ── Research Experiences ─────────────────────────────────────────────
+story += sec("Research Experiences")
+story.append(b("Advisor: <a href='https://xiaozhoucam.github.io/' color='#1155CC'><u>Xiao Zhou</u></a>, Gaoling School of Artificial Intelligence, Renmin University of China"))
 skills = [
-    ("<b>Academic:</b>",
-     "Independently completed the \"Innovation Cup\" Science and Technology Competition; "
-     "work: \"Academic Quality Crisis in the AI Era — LLM-Assisted Writing Effects "
-     "and Paper Quality Detection System\""),
-    ("<b>Technical:</b>",
-     "Proficient in R, SPSS; proficient in LaTeX for academic typesetting; "
-     "proficient in Excel, PowerPoint and other office software"),
-    ("<b>Organizational:</b>",
-     "Head of Theory Department, Party Building Promotion Committee, "
-     "School of Statistics, Renmin University of China"),
-    ("<b>Contemporary Insight:</b>",
-     "April 2025 – researched the balance between content quality and traffic monetization "
-     "in online videos; awarded \"Outstanding Individual\" in freshman seminar"),
-    ("<b>Party Membership:</b>",
-     "Dec 2025, selected as a Party development target; "
-     "Mar 2025, awarded \"Outstanding Communist Youth League Member\" of RUC"),
-    ("<b>Volunteer Work:</b>",
-     "Accumulated 130 hours of volunteer service; participated in RUC's "
-     "Middle School Collaborative Education Social Practice Project "
-     "and received \"Excellent Project Completion\" recognition"),
+    ("<b>Academic Quality Crisis in the AI Era--LLM-Assisted Writing Effects and Paper Quality Detection System</b>",
+     "Establish a 4-dimensional paper quality assessment framework based on LLM-as-Judge, achieve hierarchical measurement of reference hallucination rates, and identify the mediating effect of hallucination rates on paper quality."),
+    
+    ("<b>WED-Net: A Weather-Effect Disentanglement Network with Causal Augmentation for Urban Flow Prediction</b>",
+     "Disentangle intrinsic and weather-induced traffic patterns via attention mechanisms, assisted by a weather discriminator and a causal data augmentation strategy that preserves causal structures while perturbing non-causal components."),
+    
+    ("<b>Controllable Affective Generation via Latent Vector Steering</b>",
+     "Propose EmoVec, a post-hoc framework to achieve controllable affective generation in large language models via latent vector steering, addressing the emotional flattening issue caused by alignment techniques without weight tuning or retraining"
+),
 ]
 for label, content in skills:
-    story.append(Paragraph(f"• {label} {content}", body_style))
+    story.append(Paragraph(f"• {label}", body_style))
+    for sub in content.replace(";<", "\x00<").replace("; ", "\x00").replace(";", "\x00").split("\x00"):
+        sub = sub.strip()
+        if sub:
+            story.append(Paragraph(f"  · {sub}", body_style))
+story.append(sp(3))
+
+# ── Research Interests ─────────────────────────────────────────────
+story += sec("Research Interests")
+
+skills = [
+    ("<b>Machine Learning</b>",
+     "Pursuing generalizable knowledge discovery from <b>unlabeled or sparsely annotated data</b>.;"
+     "Embedding <b>graph-structured</b> data into low-dimensional vector spaces while preserving topological and semantic properties."),
+    
+    ("<b>Data Mining</b>",
+     "Characterizing interaction patterns and evolutionary dynamics in <b>social network</b>.;"
+     "Extracting predictive and descriptive patterns from <b>sequential time-stamped</b> data.;"
+     "Integrateing <b>heterogeneous information</b> across text, image, graph and other modalities for robust knowledge extraction."),
+    
+    ("<b>Optimization</b>",
+     "Solving <b>Supply chain</b> under uncertainty for resilient and cost-efficient global logistics.;"
+     "Optimizing model architectures to improve the efficiency and scalability of <b>personalized recommendation systems</b>."),
+    
+    ("<b>Social Computing</b>",
+     "Building data-driven and AI-enabled frameworks to optimize <b>urban traffic</b> operation and management.;"
+     "Revealing the <b>diffusion laws of information</b> and viewpoints in online social systems.;"
+     "AI-powered <b>sentiment analysis</b> from textual and multimodal data."),
+]
+
+for label, content in skills:
+    story.append(Paragraph(f"• {label}", body_style))
+    for sub in content.replace(";<", "\x00<").replace("; ", "\x00").replace(";", "\x00").split("\x00"):
+        sub = sub.strip()
+        if sub:
+            story.append(Paragraph(f"  · {sub}", body_style))
 
 # ════════════════════════════════════════════════════════════════════════════
 doc.build(story)
 print(f"PDF generated: {OUTPUT}")
+
