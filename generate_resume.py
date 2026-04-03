@@ -100,8 +100,8 @@ story.append(Paragraph(contact1, contact_style))
 
 contact2 = (
     'Renmin University of China | Homepage: '
-    '<a href="https:///SummerChangDog.github.io/" color="#1155CC">'
-    '<u>https:///SummerChangDog.github.io/</u></a>'
+    '<a href="https://SummerChangDog.github.io/" color="#1155CC">'
+    '<u>https://SummerChangDog.github.io/</u></a>'
 )
 story.append(Paragraph(contact2, contact_style))
 story.append(sp(5))
@@ -127,7 +127,7 @@ story.append(b(
     "<b>Prize:</b> National Third Prize, National Mathematics Competition for College Students, 2025"
 ))
 story.append(b(
-    "<b>Honors:</b> First-class Academic Excellence Scholarship, RUC, 2025"
+    "<b>Honor:</b> First-class Academic Excellence Scholarship, RUC, 2025"
 ))
 story.append(sp(3))
 
@@ -159,10 +159,10 @@ skills = [
      "Establish a 4-dimensional paper quality assessment framework based on LLM-as-Judge, achieve hierarchical measurement of reference hallucination rates, and identify the mediating effect of hallucination rates on paper quality."),
     
     ("<b>WED-Net: A Weather-Effect Disentanglement Network with Causal Augmentation for Urban Flow Prediction</b>",
-     "Disentangle intrinsic and weather-induced traffic patterns via attention mechanisms, assisted by a weather discriminator and a causal data augmentation strategy that preserves causal structures while perturbing non-causal components."),
+     "Disentangle weather-induced traffic patterns via attention mechanisms, with a weather discriminator and a causal data augmentation strategy that preserves causal structures while perturbing non-causal components."),
     
     ("<b>Controllable Affective Generation via Latent Vector Steering</b>",
-     "Propose EmoVec, a post-hoc framework to achieve controllable affective generation in large language models via latent vector steering, addressing the emotional flattening issue caused by alignment techniques without weight tuning or retraining"
+     "Propose EmoVec, a post-hoc framework for controllable affective generation in llms via latent vector steering, addressing the emotional flattening issue caused by alignment techniques without weight tuning or retraining"
 ),
 ]
 for label, content in skills:
@@ -179,16 +179,15 @@ story += sec("Research Interests")
 skills = [
     ("<b>Machine Learning</b>",
      "Pursuing generalizable knowledge discovery from <b>unlabeled or sparsely annotated data</b>.;"
-     "Embedding <b>graph-structured</b> data into low-dimensional vector spaces while preserving topological and semantic properties."),
+     "Embedding <b>graph-structured</b> data into low-dimensional vector spaces while preserving topological properties."),
     
     ("<b>Data Mining</b>",
-     "Characterizing interaction patterns and evolutionary dynamics in <b>social network</b>.;"
      "Extracting predictive and descriptive patterns from <b>sequential time-stamped</b> data.;"
-     "Integrateing <b>heterogeneous information</b> across text, image, graph and other modalities for robust knowledge extraction."),
+     "Integrateing <b>heterogeneous information</b> across text, image, graph for robust knowledge extraction."),
     
     ("<b>Optimization</b>",
-     "Solving <b>Supply chain</b> under uncertainty for resilient and cost-efficient global logistics.;"
-     "Optimizing model architectures to improve the efficiency and scalability of <b>personalized recommendation systems</b>."),
+     "Analyze <b>stochastic optimization</b> for robust decision-making in uncertain supply chain systems.;"
+     "Investigate <b>structural optimization</b> to enhance the theoretical efficiency and scalability of recommendation models."),
     
     ("<b>Social Computing</b>",
      "Building data-driven and AI-enabled frameworks to optimize <b>urban traffic</b> operation and management.;"
