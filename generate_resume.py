@@ -187,7 +187,7 @@ skills = [
     
     ("<b>Optimization</b>",
      "Analyze <b>stochastic optimization</b> for robust decision-making in uncertain supply chain systems.;"
-     "Investigate <b>structural optimization</b> to enhance the theoretical efficiency and scalability of recommendation models."),
+     "Investigate <b>structural optimization</b> to enhance the theoretical efficiency of <b>recommendation models</b>."),
     
     ("<b>Social Computing</b>",
      "Building data-driven and AI-enabled frameworks to optimize <b>urban traffic</b> operation and management.;"
