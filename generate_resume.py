@@ -154,16 +154,17 @@ story.append(sp(3))
 # ── Research Experiences ─────────────────────────────────────────────
 story += sec("Research Experiences")
 story.append(b("Advisor: <a href='https://xiaozhoucam.github.io/' color='#1155CC'><u>Xiao Zhou</u></a>, Gaoling School of Artificial Intelligence, Renmin University of China"))
-skills = [
-    ("<b>Academic Quality Crisis in the AI Era--LLM-Assisted Writing Effects and Paper Quality Detection System</b>",
-     "Establish a 4-dimensional paper quality assessment framework based on LLM-as-Judge, achieve hierarchical measurement of reference hallucination rates, and identify the mediating effect of hallucination rates on paper quality."),
-    
+skills = [ 
     ("<b>WED-Net: A Weather-Effect Disentanglement Network with Causal Augmentation for Urban Flow Prediction</b>",
      "Disentangle weather-induced traffic patterns via attention mechanisms, with a weather discriminator and a causal data augmentation strategy that preserves causal structures while perturbing non-causal components."),
     
     ("<b>Controllable Affective Generation via Latent Vector Steering</b>",
      "Propose EmoVec, a post-hoc framework for controllable affective generation in llms via latent vector steering, addressing the emotional flattening issue caused by alignment techniques without weight tuning or retraining"
 ),
+
+    ("<b>Academic Quality Crisis in the AI Era--LLM-Assisted Writing Effects and Paper Quality Detection System</b>",
+     "Establish a 4-dimensional paper quality assessment framework based on LLM-as-Judge, achieve hierarchical measurement of reference hallucination rates, and identify the mediating effect of hallucination rates on paper quality."),
+   
 ]
 for label, content in skills:
     story.append(Paragraph(f"• {label}", body_style))
@@ -183,11 +184,11 @@ skills = [
     
     ("<b>Data Mining</b>",
      "Extracting predictive and descriptive patterns from <b>sequential time-stamped</b> data.;"
-     "Integrateing <b>heterogeneous information</b> across text, image, graph for robust knowledge extraction."),
+     "Integrating <b>heterogeneous information</b> across text, image, graph for robust knowledge extraction."),
     
     ("<b>Optimization</b>",
      "Analyze <b>stochastic optimization</b> for robust decision-making in uncertain supply chain systems.;"
-     "Investigate <b>structural optimization</b> to enhance the theoretical efficiency of <b>recommendation models</b>."),
+     "Investigate structural optimization to enhance the theoretical efficiency of <b>recommendation models</b>."),
     
     ("<b>Social Computing</b>",
      "Building data-driven and AI-enabled frameworks to optimize <b>urban traffic</b> operation and management.;"
