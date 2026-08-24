@@ -135,18 +135,17 @@ story.append(sp(3))
 story += sec("Academic Papers")
 
 story.append(Paragraph(
-    "• Qian Hong, <b>Siyuan Chang</b>, Xiao Zhou. "
-    "\"WED-Net: A Weather-Effect Disentanglement Network with Causal Augmentation "
-    "for Urban Flow Prediction.\" "
+    "• WED-Net: A Weather-Effect Disentanglement Network with Causal Augmentation for Urban Flow Prediction.<br/>"
+    "Qian Hong, <b>Siyuan Chang</b>, Xiao Zhou.<br/>"
     '<a href="https://arxiv.org/abs/2601.22586" color="#1155CC"><u>arXiv:2601.22586</u></a>. '
     "<i>WWW 2026</i>.",
     body_style,
 ))
 story.append(Paragraph(
-    "• Xixian Yong, <b>Siyuan Chang</b>, Xiao Zhou, Zihe Wang, Yingying Zhang, "
-    "Yefeng Zheng, Xian Wu. "
-    "\"Controllable Affective Generation via Latent Vector Steering.\" "
-    "<i>Under review at ACL 2026</i>.",
+    "• Controllable Affective Generation via Latent Vector Steering.<br/>"
+    "Xixian Yong, <b>Siyuan Chang</b>, Xiao Zhou, Zihe Wang, Yingying Zhang,"
+    "Yefeng Zheng, Xian Wu.<br/>"
+    "<i>EMNLP 2026</i>.",
     body_style,
 ))
 story.append(sp(3))
@@ -161,10 +160,6 @@ skills = [
     ("<b>Controllable Affective Generation via Latent Vector Steering</b>",
      "Propose EmoVec, a post-hoc framework for controllable affective generation in llms via latent vector steering, addressing the emotional flattening issue caused by alignment techniques without weight tuning or retraining"
 ),
-
-    ("<b>Academic Quality Crisis in the AI Era--LLM-Assisted Writing Effects and Paper Quality Detection System</b>",
-     "Establish a 4-dimensional paper quality assessment framework based on LLM-as-Judge, achieve hierarchical measurement of reference hallucination rates, and identify the mediating effect of hallucination rates on paper quality."),
-   
 ]
 for label, content in skills:
     story.append(Paragraph(f"• {label}", body_style))
